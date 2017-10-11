@@ -1,0 +1,15 @@
+{
+  "name": "patientccdgenerator",
+  "version": "1.0.0",
+  "description": "patient ccd generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nagaraju Ravula",
+  "dependencies": {
+        "ejs": "*",
+        "express": "^4.6.1"
+    },
+  "license": "ISC"
+}

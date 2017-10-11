@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Patient CCD</title>
+<style type="text/css">
+	
+	div{
+border-style: groove;
+width: 85%;
+padding: 30px;
+}
+table#basicData1 {
+    margin-right: 35%;
+}
+p.patient_basicData {
+    margin-left: 19px;
+}
+</style>
+</head>
+
+<body>
+     <center><h2>Continuity of Care Document (Transition of Care)</h2></center>
+
+
+    
+
+    <% JSON.parse(patients).forEach(function(patient) { %>
+   
+
+
+
+	<div class="patient_data1">
+	<table style="width:0%;float:left" id="basicData1" >
+	 
+	  <tr>
+			<td>Patient:</td>
+			<td><p class="patient_basicData"><%= patient.patient%></p></td>
+		</tr>
+		<tr>
+			<td>Date of birth:</td>
+			<td><p class="patient_basicData"><%= patient.dateOfBirth%></p></td>
+		</tr>
+
+		<tr>
+			<td>Sex:</td>
+			<td><p class="patient_basicData"><%= patient.sex%></p></td>
+		</tr>
+      <tr>
+			<td>Race:</td>
+			<td><p class="patient_basicData"><%= patient.sex%></p></td>
+		</tr>
+		</table>
+		<table>
+		<tr>
+			<td>Ethnicity:</td>
+			<td><p class="patient_basicData"><%= patient.ethnicity%></p></td>
+		</tr>
+		<tr>
+			<td>Contact Info:</td>
+			<td><p class="patient_basicData"><%= patient.patientContactInfo%></p></td>
+		</tr>
+		<tr>
+			<td>Patient IDs:</td>
+			<td><p class="patient_basicData"><%= patient.patientIds%> </p></td>
+		</tr>	
+		</table><br>
+	</div>   
+	 
+    <div id="patient_data2">
+    <table>
+     <tr>
+			<td>Document Id:</td>
+			<td><p class="document_Info"><%= patient.documentId%></p></td>
+		</tr>
+		
+		 <tr>
+			<td>Document Created:</td>
+			<td><p class="document_Info"><%= patient.documentCreated%></p></td>
+		</tr>
+		</table>
+    </div>
+
+
+
+   <div id="patient_data3">
+    <table>
+                <tr>
+			<td>Performer:</td>
+			<td><p class="performer"><%= patient.performer%></p></td>
+		</tr>
+   </table>
+    </div>
+    
+     
+     
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="patient_data4">
+    <table>
+        <tr>
+			<td>Author:</td>
+			<td><p class="author_Info"><%= patient.author%></p></td>
+		</tr>
+		<tr>
+			<td>Contact Info:</td>
+			<td><p class="author_Info"><%= patient.authorContactInfo%></p></td>
+		</tr> 
+		</table>
+    </div>
+    
+    
+    <div id="patient_data5">
+    <table>
+       <tr>
+			<td>Personal Relationship:</td>
+			<td><p class="personal_relationship"><%= patient.personalRelationship%> </p></td>
+		</tr>
+     
+     <tr>
+			<td>Contact Info:</td>
+			<td><p class="personal_relationship"> <%= patient.personalRelContactInfo%>  </p></td>
+		</tr>
+	</table>
+	</div>
+	
+	<div id="patient_data6">
+	   <table>
+	     <tr>
+			<td>Document Maintained by:</td>
+			<td><p class="document_maintainer"></p> <%= patient.documentMaintainedBy%>  </td>
+		</tr>
+		 <tr>
+			<td>Contact Info:</td>
+			<td><p class="document_maintainer"> <%= patient.documentMaintainerContactInfo%>   </p></td>
+		</tr>
+	   
+	   </table>
+	</div>
+	
+
+
+ <% }); %>
+
+
+
+	<div id="patient_data7">
+	<h4>Allergies, Adverse Reactions, Alerts</h4>
+	<table  style="width:100%">
+	 <tr>
+			<th>Allergen:</th>
+			<th>Type:</th>
+			<th>Severity:</th>
+			<th>Reaction:</th>
+			<th>Last Updated:</th>
+			<th>Verified:</th>
+			<th>Status:</th>
+		</tr>	
+	</table>
+	
+	</div>
+	
+	
+	<div id="patient_data8">
+	<h4>Medications</h4> 
+	<h5>Active Medications</h5>
+	
+	<table  style="width:100%">
+    	<tr>
+			<th>Medication</th>
+			<th>Dose</th>
+			<th>Units</th>
+			<th>Route</th>
+			<th>Sig</th>
+			<th>Qty</th>
+			<th>Days</th>
+			<th>Start Date</th>
+			<th>Discontinued Date</th>
+			<th>Status</th>
+			<th>Instructions</th>
+		</tr>
+	</table>
+	</div>
+	
+	<div id="patient_data9">
+	<h4>Problem List</h4>
+	<h5>Active Problems</h5>
+	<table style="width:100%">
+		 <tr>
+			<th>Medical Problem</th>
+			<th>Onset Date</th>
+			<th>Status</th>
+		</tr>
+	</table>
+	<h5>Inactive/Resolved Problems</h5>
+	<table style="width:100%">
+		 <tr>
+			<th>Medical Problem</th>
+			<th>Onset Date</th>
+			<th>Status</th>
+		</tr>
+	</table>
+	
+	</div>
+	
+	
+	<div id="patient_data10">
+	<h4>Procedures</h4>
+	<table style="width:100%">
+	<tr>
+	   <th>Procedure</th>
+	   <th>Date</th>
+	   <th>Status</th>
+	   <th>Provider(s)</th>
+	 </tr>
+	</table>
+	
+	</div>
+	
+	
+	
+	
+	
+	<div id="patient_data11">
+	<h4>Relevant Diagnostic Tests and/or Laboratory Data</h4>
+	<h5>Laboratory Results</h5>
+	<table style="width:100%">
+	<tr>
+	   <th>Test</th>
+	   <th>Date/Time</th>
+	   <th>Result</th>
+	   <th>Interp:</th>
+	   <th>Ref Range:</th>
+	   <th>Result Comment</th>
+	  </tr>
+	</table>
+	
+	<h5>Microbiology Results</h5>
+	<table style="width:100%">
+	<tr>
+	   <th>Procedure</th>
+	   <th>Source</th>
+	   <th>Result</th>
+	   <th>Collection Date/Time</th>
+	   <th>Result Date/Time</th>
+	 </tr>
+  </table>
+	</div>
+	
+	
+	
+	
+	<div id="patient_data12">
+	<h4>Advance Directives</h4>
+	<table style="width:100%">
+	<tr>
+	   <th>Advanced Directive</th>
+	   <th>Response</th>
+	   <th>Recorded Date/Time</th>
+	 </tr>
+	</table>
+	
+	</div>
+	
+	
+	
+	
+	<div id="patient_data13">
+	<h4>Chief Complaint and Reason for Visit</h4>
+	<table style="width:100%">
+	<tr>
+	   <th>Encounter</th>
+	   <th>Admit Date</th>
+	   <th>Chief Complaint</th>
+	   <th>Reason for Visit</th>
+	 </tr>
+	</table>
+	
+	</div>
+	
+	
+	
+	<div id="patient_data14">
+	<h4>Hospital Discharge Instructions</h4>
+	<p class="hospital_discharge_instructions"></p>
+	</div>
+	
+	
+	
+	
+	<div id="patient_data15">
+	<h4>Hospital Discharge Medications</h4>
+	<table style="width:100%">
+	<tr>
+	   <th>Medication</th>
+	   <th>Dose</th>
+	   <th>Units</th>
+	   <th>Route</th>
+	   <th>Sig</th>
+	   <th>Qty</th>
+	   <th>Days</th>
+	   <th>Order Date</th>
+	   <th>Status</th>
+	   <th>Instructions</th>
+	 </tr>
+	</table >
+	</div>
+	
+	
+	
+	
+	
+	<div id="patient_data16">
+	<h4>Encounters</h4>
+	<table style="width:100%">
+	<tr>
+	   <th>Encounter</th>
+	   <th>Facility</th>
+	   <th>Location</th>
+	   <th>Admit Date</th>
+	   <th>Discharge Date</th>
+	   <th>Attending Provider</th>
+	 </tr>
+	</table >
+	<table style="width:100%">
+	<tr>
+	      <th>Encounter Diagnosis</th>
+	   <th>Onset Date</th>
+	 </tr>
+	</table>
+	</div>
+	
+	
+	
+	
+	<div id="patient_data17">
+	<h4>Family History</h4>
+	<table style="width:100%" id="family_history">
+	<tr>
+	   <th>Query</th>
+	   <th>Response</th>
+	   <th>Instance</th>
+	 	   <th>Date Recorded</th>
+	   <th>Comment</th>
+	  </tr>
+	</table >
+	</div>
+	
+	
+	
+	
+	<div id="patient_data18">
+	<h4>Functional Status</h4>
+	<p class="functional_status"></p>
+	</div>
+	
+	
+	
+	
+	<div id="patient_data19">
+	<h4>Immunizations</h4>
+	<table style="width:100%">
+	<tr>
+	   <th>Name</th>
+	   <th>Date Given</th>
+	   <th>Type</th>
+	 </tr>
+	</table >
+	</div>
+	
+	
+	
+	
+	
+	<div id="patient_data20">
+	<h4>Payers</h4>
+	<table style="width: 100%"  id="payer">
+	<tr>
+	  <th>Payer Name</th>
+	  <th>Policy Type</th>
+	  <th>Covered Party</th>
+	  <th>Covered Party Id</th>
+	  <th>Relationship</th>
+	  <th>Subscriber</th>
+	  <th>Subscriber Id</th>
+	  </tr>
+	
+	</table >
+	</div>
+	
+	
+	
+	
+	
+	
+	<div id="patient_data21">
+	<h4>Plan of Care</h4>
+	<p id=plan_of_care></p>
+	</div>
+	
+	
+	
+	
+	
+<div id="patient_data22">
+	<h4>Social History</h4>
+	<table style="width:100%">
+	<tr>
+	  <th>Query</th>
+	  <th>Response</th>
+	  <th>Date Recorded</th>
+	  <th>Comment</th>
+	   	</table >
+	   	
+	 <table style="width:100%">
+	 <tr>
+	   <th>Query</th>
+	  <th>Response</th>
+	  <th> Start Date</th>
+	  <th>Stop Date</th>
+	  </tr>
+	 
+	 </table>
+	</div>
+	
+	
+	
+	
+	
+	<div id="patient_data23">
+	<h4>Vital Signs</h4>
+	<table style="width:100%">
+	<tr>
+	  <th>Vital Reading</th>
+	  <th>Result</th>
+	  <th>Reference Range</th>
+	  <th>Collection Date/Time</th>
+	   	</table >
+	   	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+</body>
+</html>
