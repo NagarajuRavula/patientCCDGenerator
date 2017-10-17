@@ -3,31 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Patient CCD</title>
-<style type="text/css">
-	
-	div{
-border-style: groove;
-width: 85%;
-padding: 30px;
-}
-table#basicData1 {
-    margin-right: 35%;
-}
-p.patient_basicData {
-    margin-left: 19px;
-}
-</style>
+<link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
      <center><h2>Continuity of Care Document (Transition of Care)</h2></center>
 
-
     
 
-    <% JSON.parse(patients).forEach(function(patient) { %>
+    <% (patients['patient.json']).forEach(function(patient) { %>
    
-
 
 
 	<div class="patient_data1">
@@ -155,15 +140,26 @@ p.patient_basicData {
 	<div id="patient_data7">
 	<h4>Allergies, Adverse Reactions, Alerts</h4>
 	<table  style="width:100%">
-	 <tr>
-			<th>Allergen:</th>
-			<th>Type:</th>
-			<th>Severity:</th>
-			<th>Reaction:</th>
-			<th>Last Updated:</th>
-			<th>Verified:</th>
-			<th>Status:</th>
-		</tr>	
+	    <tr>
+			<th>Allergen</th>
+			<th>Type</th>
+			<th>Severity</th>
+			<th>Reaction</th>
+			<th>Last Updated</th>
+			<th>Verified</th>
+			<th>Status</th>
+		</tr>
+	   <% (patients['patientAllergy.json']).forEach(function(patientAllergy) { %>	
+	   	<tr>
+			<td><%=patientAllergy.allergen%></td>
+			<td><%=patientAllergy.type%></td>
+			<td><%=patientAllergy.severity%></td>
+			<td><%=patientAllergy.reaction%></td>
+			<td><%=patientAllergy.lastUpdated%></td>
+			<td><%=patientAllergy.verified%></td>
+			<td><%=patientAllergy.status%></td>
+		</tr>
+	 <% }); %>
 	</table>
 	
 	</div>
@@ -187,6 +183,22 @@ p.patient_basicData {
 			<th>Status</th>
 			<th>Instructions</th>
 		</tr>
+      <% (patients['medication.json']).forEach(function(medication) { %>
+         <tr>
+			<td> <%=medication.medication%> </td>
+			<td> <%=medication.dose%> </td>
+			<td> <%=medication.units%> </td>
+			<td> <%=medication.route%> </td>
+			<td> <%=medication.sig%> </td>
+			<td> <%=medication.qty%> </td>
+			<td> <%=medication.days%> </td>
+			<td> <%=medication.startDate%> </td>
+			<td> <%=medication.discontinuedDate%> </td>
+			<td> <%=medication.status%> </td>
+			<td> <%=medication.instructions%> </td>
+		</tr>
+     <% }); %>
+
 	</table>
 	</div>
 	
@@ -199,6 +211,13 @@ p.patient_basicData {
 			<th>Onset Date</th>
 			<th>Status</th>
 		</tr>
+		<% (patients['activeProblems.json']).forEach(function(activeProblem) { %>
+		 <tr>
+			<td><%=activeProblem.medicalProblem%></td>
+			<td><%=activeProblem.onsetDate%></td>
+			<td><%=activeProblem.status%></td>
+		</tr>
+		<% }); %>
 	</table>
 	<h5>Inactive/Resolved Problems</h5>
 	<table style="width:100%">
@@ -207,6 +226,13 @@ p.patient_basicData {
 			<th>Onset Date</th>
 			<th>Status</th>
 		</tr>
+		<% (patients['inactiveProblems.json']).forEach(function(inactiveProblem) { %>
+		 <tr>
+			<td><%=inactiveProblem.medicalProblem%></td>
+			<td><%=inactiveProblem.onsetDate%></td>
+			<td><%=inactiveProblem.status%></td>
+		</tr>
+		<% }); %>
 	</table>
 	
 	</div>
@@ -221,6 +247,14 @@ p.patient_basicData {
 	   <th>Status</th>
 	   <th>Provider(s)</th>
 	 </tr>
+	 <% (patients['procedures.json']).forEach(function(procedure) { %>
+	 <tr>
+	   <td><%=procedure.procedure%></td>
+	   <td><%=procedure.date%></td>
+	   <td><%=procedure.status%></td>
+	   <td><%=procedure.provider%></td>
+	 </tr>
+	 <% }); %>
 	</table>
 	
 	</div>
@@ -240,7 +274,17 @@ p.patient_basicData {
 	   <th>Interp:</th>
 	   <th>Ref Range:</th>
 	   <th>Result Comment</th>
-	  </tr>
+	</tr>
+	 <% (patients['laboratoryResults.json']).forEach(function(laboratoryResult) { %>
+	 <tr>
+	   <td><%=laboratoryResult.test%></</td>
+	   <td><%=laboratoryResult.dateTime%></td>
+	   <td><%=laboratoryResult.result%></td>
+	   <td><%=laboratoryResult.interp%></td>
+	   <td><%=laboratoryResult.refRange%></td>
+	   <td><%=laboratoryResult.resultComment%></td>
+	</tr>
+	 <% }); %>
 	</table>
 	
 	<h5>Microbiology Results</h5>
@@ -252,6 +296,15 @@ p.patient_basicData {
 	   <th>Collection Date/Time</th>
 	   <th>Result Date/Time</th>
 	 </tr>
+	 <% (patients['microbiologyResults.json']).forEach(function(microbiologyResult) { %>
+	 <tr>
+	   <td><%=microbiologyResult.procedure%></</td>
+	   <td><%=microbiologyResult.source%></td>
+	   <td><%=microbiologyResult.result%></td>
+	   <td><%=microbiologyResult.collectionDateTime%></td>
+	   <td><%=microbiologyResult.resultDateTime%></td>
+	</tr>
+	 <% }); %>
   </table>
 	</div>
 	
@@ -266,6 +319,13 @@ p.patient_basicData {
 	   <th>Response</th>
 	   <th>Recorded Date/Time</th>
 	 </tr>
+	  <% (patients['advanceDirectives.json']).forEach(function(advanceDirective) { %>
+	 <tr>
+	   <td><%=advanceDirective.advanceDirective%></</td>
+	   <td><%=advanceDirective.response%></td>
+	   <td><%=advanceDirective.recordedDateTime%></td>
+	</tr>
+	 <% }); %>
 	</table>
 	
 	</div>
@@ -282,6 +342,14 @@ p.patient_basicData {
 	   <th>Chief Complaint</th>
 	   <th>Reason for Visit</th>
 	 </tr>
+	  <% (patients['complaintAndReasonforVisit.json']).forEach(function(complaintAndReasonforVisit) { %>
+	 <tr>
+	   <td><%=complaintAndReasonforVisit.encounter%></</td>
+	   <td><%=complaintAndReasonforVisit.admitDate%></td>
+	   <td><%=complaintAndReasonforVisit.chiefComplaint%></td>
+	   <td><%=complaintAndReasonforVisit.reasonForVisit%></td>
+	</tr>
+	 <% }); %>
 	</table>
 	
 	</div>
@@ -311,6 +379,20 @@ p.patient_basicData {
 	   <th>Status</th>
 	   <th>Instructions</th>
 	 </tr>
+	  <% (patients['hospitalDischargeMedications.json']).forEach(function(hospitalDischargeMedication) { %>
+	 <tr>
+	   <td><%=hospitalDischargeMedication.medication%></</td>
+	   <td><%=hospitalDischargeMedication.dose%></td>
+	   <td><%=hospitalDischargeMedication.units%></td>
+	   <td><%=hospitalDischargeMedication.route%></td>
+	   <td><%=hospitalDischargeMedication.sig%></</td>
+	   <td><%=hospitalDischargeMedication.qty%></td>
+	   <td><%=hospitalDischargeMedication.days%></td>
+	   <td><%=hospitalDischargeMedication.orderDate%></td>
+	   <td><%=hospitalDischargeMedication.status%></</td>
+	   <td><%=hospitalDischargeMedication.instructions%></td>
+	</tr>
+	 <% }); %>
 	</table >
 	</div>
 	
@@ -329,12 +411,28 @@ p.patient_basicData {
 	   <th>Discharge Date</th>
 	   <th>Attending Provider</th>
 	 </tr>
+	  <% (patients['encounters.json']).forEach(function(encounter) { %>
+	 <tr>
+	   <td><%=encounter.encounter%></</td>
+	   <td><%=encounter.facility%></td>
+	   <td><%=encounter.location%></td>
+	   <td><%=encounter.admitDate%></td>
+	   <td><%=encounter.dischargeDate%></</td>
+	   <td><%=encounter.attendingProvider%></td>
+	</tr>
+	 <% }); %>
 	</table >
 	<table style="width:100%">
 	<tr>
 	      <th>Encounter Diagnosis</th>
-	   <th>Onset Date</th>
+	      <th>Onset Date</th>
 	 </tr>
+	 	  <% (patients['encounterDiagnosis.json']).forEach(function(encounterDiagnosis) { %>
+	 <tr>
+	   <td><%=encounterDiagnosis.encounterDiagnosis%></</td>
+	   <td><%=encounterDiagnosis.onsetDate%></td>
+	</tr>
+	 <% }); %>
 	</table>
 	</div>
 	
@@ -348,9 +446,18 @@ p.patient_basicData {
 	   <th>Query</th>
 	   <th>Response</th>
 	   <th>Instance</th>
-	 	   <th>Date Recorded</th>
+	   <th>Date Recorded</th>
 	   <th>Comment</th>
 	  </tr>
+	   <% (patients['familyHistory.json']).forEach(function(familyHistory) { %>
+	 <tr>
+	   <td><%=familyHistory.query%></</td>
+	   <td><%=familyHistory.response%></td>
+	   <td><%=familyHistory.instance%></td>
+	   <td><%=familyHistory.dateRecorded%></td>
+	   <td><%=familyHistory.comment%></</td>
+	</tr>
+	 <% }); %>
 	</table >
 	</div>
 	
@@ -373,6 +480,13 @@ p.patient_basicData {
 	   <th>Date Given</th>
 	   <th>Type</th>
 	 </tr>
+	  <% (patients['immunization.json']).forEach(function(immunization) { %>
+	 <tr>
+	   <td><%=immunization.name%></</td>
+	   <td><%=immunization.dateGiven%></td>
+	   <td><%=immunization.type%></td>
+	</tr>
+	 <% }); %>
 	</table >
 	</div>
 	
@@ -392,6 +506,17 @@ p.patient_basicData {
 	  <th>Subscriber</th>
 	  <th>Subscriber Id</th>
 	  </tr>
+	 <% (patients['payers.json']).forEach(function(payer) { %>
+	 <tr>
+	   <td><%=payer.payerName%></</td>
+	   <td><%=payer.policyType%></td>
+	   <td><%=payer.coveredParty%></td>
+	   <td><%=payer.coveredPartyId%></</td>
+	   <td><%=payer.relationship%></td>
+	   <td><%=payer.subscriber%></</td>
+	   <td><%=payer.subscriberId%></td>
+	</tr>
+	 <% }); %>
 	
 	</table >
 	</div>
@@ -418,7 +543,17 @@ p.patient_basicData {
 	  <th>Response</th>
 	  <th>Date Recorded</th>
 	  <th>Comment</th>
-	   	</table >
+	</tr>
+	 <% (patients['socialHistory1.json']).forEach(function(socialHistory1) { %>
+	 <tr>
+	   <td><%=socialHistory1.query%></</td>
+	   <td><%=socialHistory1.response%></td>
+	   <td><%=socialHistory1.dateRecorded%></td>
+	   <td><%=socialHistory1.comment%></</td>
+	</tr>
+	 <% }); %>
+	 
+	 </table >
 	   	
 	 <table style="width:100%">
 	 <tr>
@@ -426,7 +561,15 @@ p.patient_basicData {
 	  <th>Response</th>
 	  <th> Start Date</th>
 	  <th>Stop Date</th>
-	  </tr>
+	 </tr>
+	 <% (patients['socialHistory2.json']).forEach(function(socialHistory2) { %>
+	 <tr>
+	   <td><%=socialHistory2.query%></</td>
+	   <td><%=socialHistory2.response%></td>
+	   <td><%=socialHistory2.startDate%></td>
+	   <td><%=socialHistory2.stopDate%></</td>
+	</tr>
+	 <% }); %>
 	 
 	 </table>
 	</div>
@@ -443,7 +586,16 @@ p.patient_basicData {
 	  <th>Result</th>
 	  <th>Reference Range</th>
 	  <th>Collection Date/Time</th>
-	   	</table >
+	</tr>
+	 <% (patients['vitalSigns.json']).forEach(function(vitalSign) { %>
+	 <tr>
+	   <td><%=vitalSign.vitalReading%></</td>
+	   <td><%=vitalSign.result%></td>
+	   <td><%=vitalSign.referenceRange%></td>
+	   <td><%=vitalSign.collectionDateTime%></</td>
+	</tr>
+	 <% }); %>
+	</table >
 	   	
 	</div>
 	

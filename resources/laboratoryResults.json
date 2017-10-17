@@ -1,0 +1,51 @@
+
+
+
+[
+  {
+     "test":"ORBITOTOMY",
+     "dateTime":"November 14, 2016 5:39pm",
+     "result":"140 MMOL/L",
+     "interp":"",
+     "refRange":"138­-146",
+     "resultComment":""
+
+  },
+   {
+     "test":"Whole Blood Potassium",
+     "dateTime":"November 14, 2016 5:39pm",
+     "result":"1.2 MMOL/L",
+     "interp":"Low",
+     "refRange":"3.5­-4.9",
+     "resultComment":""
+
+  },
+   {
+     "test":"Chloride Level",
+     "dateTime":"November 14, 2016 5:39pm",
+     "result":"154 MMOL/L",
+     "interp":"High",
+     "refRange":"98­-109",
+     "resultComment":""
+
+  },
+   {
+     "test":"Carbon Dioxide Level",
+     "dateTime":"November 14, 2016 5:39pm",
+     "result":"25 MMOL/L",
+     "interp":"",
+     "refRange":"24­-29",
+     "resultComment":""
+
+  },
+   {
+     "test":"Whole Blood Glucose",
+     "dateTime":"November 14, 2016 5:39pm",
+     "result":"100 MG/DL",
+     "interp":"",
+     "refRange":"70-105",
+     "resultComment":""
+
+  }
+]
+

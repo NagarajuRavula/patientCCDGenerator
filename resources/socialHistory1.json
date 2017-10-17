@@ -1,0 +1,38 @@
+
+
+
+
+
+[
+  {
+     "query":"Alcohol Type",
+     "response":"Beer",
+     "dateRecorded":"November 14, 2016 5:30pm",
+     "comment":""
+  },
+   {
+     "query":"Alcohol Use",
+     "response":"YES",
+     "dateRecorded":"November 14, 2016 5:30pm",
+     "comment":""
+  },
+   {
+     "query":"Amount",
+     "response":"AT LEAST 3 TIMES A DAY",
+     "dateRecorded":"November 14, 2016 5:30pm",
+     "comment":""
+  },
+   {
+     "query":"Amount/Frequency",
+     "response":"Occasional (1­3 drinks per month)",
+     "dateRecorded":"November 14, 2016 5:30pm",
+     "comment":""
+  },
+   {
+     "query":"Cigarettes Packs Per Day",
+     "response":"Greater than 2 packs (40+) perday",
+     "dateRecorded":"November 14, 2016 5:30pm",
+     "comment":""
+  }
+]
+

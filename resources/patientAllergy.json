@@ -1,0 +1,32 @@
+
+
+
+[
+  {
+     "allergen":"pilocarpine",
+     "type":"Allergy",
+     "severity":"Severe",
+     "reaction":"Pain",
+     "lastUpdated":"November 14, 2016",
+     "verified":"Y",
+     "status":"Active"
+  },
+  {
+     "allergen":"amoxicillin trihydrate",
+     "type":"Allergy",
+     "severity":"",
+     "reaction":"SPASMS",
+     "lastUpdated":"November 10, 2016",
+     "verified":"Y",
+     "status":"Active"
+  },
+  {
+     "allergen":"apple",
+     "type":"Allergy",
+     "severity":"",
+     "reaction":"HIVES",
+     "lastUpdated":"November 10, 2016",
+     "verified":"Y",
+     "status":"Active"
+  }
+]

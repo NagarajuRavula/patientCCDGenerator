@@ -1,0 +1,16 @@
+
+
+
+[
+  {
+     "name":"Influenza Vaccination",
+     "dateGiven":"November 10, 2016",
+     "type":"Administered"
+  },
+  {
+     "name":"Pneumococcal Vaccination",
+     "dateGiven":"November 14, 2016",
+     "type":"Administered"
+  }
+   
+]

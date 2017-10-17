@@ -1,0 +1,29 @@
+
+
+
+[
+  {
+     "encounter":"Departed Surgical Day Care",
+     "facility":"New York Eye & Ear Infirmary",
+     "location":"FUNDUS PHOTO",
+     "admitDate":"December 7,2016 3:59pm",
+     "dischargeDate":"December 7,2016 4:10pm",
+     "attendingProvider":"Hoffman,Ronald"
+  },
+  {
+     "encounter":"Discharged Inpatient",
+     "facility":"New York Eye &Ear Infirmary",
+     "location":"INPT ­ SEVENTH FLOOR",
+     "admitDate":"November 14,2016 5:25pm",
+     "dischargeDate":"November 14,2016 5:44pm",
+     "attendingProvider":"Boyman,Anna"
+  },
+  {
+     "encounter":"Departed Surgical Day Care",
+     "facility":"New York Eye &Ear Infirmary",
+     "location":"SURGICAL DAY CARE ­ ASU 5FLR",
+     "admitDate":"November 8,2016 5:35pm",
+     "dischargeDate":"November 18,2016 10:04am",
+     "attendingProvider":"Hoffman,Ronald"
+  }
+]

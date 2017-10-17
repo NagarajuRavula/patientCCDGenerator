@@ -1,0 +1,45 @@
+
+
+
+[
+  {
+     "medication":"Bee Pollen",
+     "dose":"550",
+     "units":"MG",
+     "route":"ORAL",
+     "sig":"Twice A Day (0900&1700)",
+     "qty":"",
+     "days":"",
+     "startDate":"November 10, 2016",
+     "discontinuedDate":"",
+     "status":"Active",
+     "instructions":""
+  },
+   {
+     "medication":"Zolpidem Tartrate",
+     "dose":"1",
+     "units":"TAB",
+     "route":"ORAL",
+     "sig":"3 Times A Day",
+     "qty":"",
+     "days":"",
+     "startDate":"November 10, 2016",
+     "discontinuedDate":"",
+     "status":"Active",
+     "instructions":""
+  },
+   {
+     "medication":"Hydrocodone/Acetaminophen",
+     "dose":"1",
+     "units":"TAB",
+     "route":"ORAL",
+     "sig":"Twice A Day (0900&1700) PRN For Abdominal Pain",
+     "qty":"14",
+     "days":"",
+     "startDate":"November 10, 2016",
+     "discontinuedDate":"",
+     "status":"Active",
+     "instructions":"*HIE TESTING label comment"
+  }
+  
+]

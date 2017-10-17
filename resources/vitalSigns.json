@@ -1,0 +1,40 @@
+
+
+
+
+
+
+
+[
+  {
+     "vitalReading":"Height",
+     "result":"1.88 m",
+     "referenceRange":"",
+     "collectionDateTime":"November 10, 2016 6:10pm"
+  },
+  {
+     "vitalReading":"Weight",
+     "result":"81.647 kg",
+     "referenceRange":"",
+     "collectionDateTime":"November 10, 2016 6:10pm"
+  },
+  {
+     "vitalReading":"Temperature",
+     "result":"98.0 F",
+     "referenceRange":"97.6 F-­99.6 F",
+     "collectionDateTime":"November 10, 2016 6:10pm"
+  },
+  {
+     "vitalReading":"Pulse",
+     "result":"87 BPM",
+     "referenceRange":"60­-90",
+     "collectionDateTime":"November 14, 2016 5:37pm"
+  },
+  {
+     "vitalReading":"Respiration",
+     "result":"20 RPM",
+     "referenceRange":"12­-24",
+     "collectionDateTime":"November 10, 2016 6:10pm"
+  }
+]
+

@@ -1,0 +1,22 @@
+
+
+
+[
+  {
+     "medicalProblem":"Cardiac abnormality",
+     "onsetDate":"",
+     "status":"Active"
+  },
+  {
+     "medicalProblem":"Ear anomaly with hearing loss",
+     "onsetDate":"",
+     "status":"Active"
+  },
+  {
+     "medicalProblem":"Stem cell donor",
+     "onsetDate":"June 2014",
+     "status":"Active"
+  }
+   
+  
+]

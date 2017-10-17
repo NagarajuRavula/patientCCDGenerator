@@ -1,0 +1,11 @@
+div{
+border-style: groove;
+width: 85%;
+padding: 30px;
+}
+table#basicData1 {
+    margin-right: 35%;
+}
+p.patient_basicData {
+    margin-left: 19px;
+}
