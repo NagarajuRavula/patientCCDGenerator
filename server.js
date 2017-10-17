@@ -6,61 +6,7 @@ var app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-
-app.get('/', function(req, res) {
- var patients=new Object();
- patients.medication = new Array();
- patients.patientBasicInfo = new Array();
-
-function getFile(file, cb) {
-    fs.readFile(file, 'utf8', function (err, data) {
-  if (err) {
-        res.send(err);
-    }
-    else {
-         if (typeof cb === 'function')
-                cb(JSON.parse(data));
-    }
-});
-}
-
-
-intialize();
-
-
-function intialize()
-{
-
-
-  getFile('resources/medication.json',name =  function(medication) {
-      console.log("2 record: "+medication[0].units)
-   patients['medication']=medication;
-   console.log("from obj: "+patients.medication[0].units);
-  });
-  getFile('resources/patient.json',name =  function(patientBasicInfo) {
-    console.log("1 record: "+patientBasicInfo[0].dataOfBirth)
-   patients['patientBasicInfo']=patientBasicInfo;
-   console.log("from obj: "+patients.patientBasicInfo[0].ethnicity);
-  });
-
-console.log("from obj: "+patients.patientBasicInfo[0].ethnicity);
-//console.log("from obj: "+patients.medication[0].units);
-
-}
-
-
-
-
-
-
-});
-
-
-
- 
-
 app.get('/getPatient', function(req, res) {
- 
 var patientObj = new Object();
 intialize();
 
@@ -86,29 +32,18 @@ function intialize(){
   getFile('socialHistory2.json');
   getFile('vitalSigns.json');
 
-
    res.render('pages/patient', {
          patients: patientObj
     }); 
 }
 
-
-
-
-function getFile(file){
+function getFile(file) {
   var data = fs.readFileSync("resources/"+file);
   var jsonData = JSON.parse(data);
   patientObj[file] = jsonData;
-}
-
-
-
+ }
 
 });
-
-
-
-
 
 app.listen(8066);
 console.log('8066 server port running');
